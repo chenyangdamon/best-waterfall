@@ -83,6 +83,7 @@
 			// 已经获取数据
 			_this._resData = [];
 			_this._mtime = 0;
+			_this._bMore=true;
 			// 懒加载
 			_this._lazy = _this.option.lazy;
 
@@ -104,7 +105,7 @@
 
 			// 页面滚动
 			$(window).scroll(function() {
-				if (_this._isRequestMore()) {
+				if (_this._isArriveFloor()&&_this._bMore) {
 					_this._request();
 				} else {
 					_this._throttle(_this._lazyload, _this);
@@ -112,11 +113,11 @@
 			});
 		},
 		/**
-		 * 是否可用加载更多
-		 * [_isRequestMore description]
+		 * 是否到底部
+		 * [_isArriveFloor description]
 		 * @return {Boolean} [description]
 		 */
-		_isRequestMore: function() {
+		_isArriveFloor: function() {
 			var _this = this,
 				_top = _this._container.offset().top,
 				_minColHeight = _this._getMostColumn(true).sum,
@@ -162,6 +163,8 @@
 					_this._resData = _this._resData.concat(data.list)
 					// 开始渲染
 					_this._render(_this._resData);
+					// 是否加载更多
+					_this._bMore=true;
 				},
 				error: function(errMsg) {
 					console.log("waterfall-数据请求失败...");
