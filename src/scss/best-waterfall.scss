@@ -1,0 +1,38 @@
+/*
+* @Author: chenyang_pc
+* @Date:   2017-11-03 16:53:27
+* @Last Modified by:   chenyang_pc
+* @Last Modified time: 2018-03-01 15:51:16
+*/
+
+.best-waterfall {
+    &-wrapper {
+        position: relative;
+        border: 1px solid red;
+    }
+    &-item {
+        position: absolute;
+        top:0;
+        left:50%;
+        background: #efefef;
+        // border:1px solid green;
+        .image {
+            // padding:10px;
+        	._img{
+        		display:block;
+        		width:100%;
+        	}
+        }
+        .text {
+        	// position:absolute;
+     		left:0;
+     		right:0;
+        	bottom:0;
+        	padding:0 3px;
+        	height:40px;
+        	line-height:40px;
+            background:#Fc0;
+        	
+        }
+    }
+}

@@ -1,4 +1,4 @@
-# What is best-waterfall?
+# best-waterfall 是什么?
 应用于web开发的瀑布流组件,实现滚动页面异步加载数据、图片懒加载、窗口重置布局自动更新.
 # 演示
 [Demo](https://chenyangdamon.github.io/best-waterfall/dist/)
